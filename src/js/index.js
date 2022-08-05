@@ -24,7 +24,11 @@ function App() {
                 </button>
                 </li>`;
         };
+        // 추가된 메뉴가 뒤쪽으로 추가됨
         document.querySelector("#espresso-menu-list").insertAdjacentHTML("beforeend", menuItemTemplate(espressoMenuName));
+        // 총 개수 바꿔줌
+        const menuConut = document.querySelector("#espresso-menu-list").querySelectorAll("li").length
+        document.querySelector(".menu-count").innerText = `총 ${menuConut}개`;
         }
     });
 }
