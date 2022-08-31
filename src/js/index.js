@@ -2,12 +2,12 @@ function App() {
 
     const updateMenuCount = () => {
         const menuConut = document.querySelector("#espresso-menu-list").querySelectorAll("li").length
-        document.querySelector(".menu-count").innerText = `총 ${menuConut}개`;
+        document.querySelector(".menu-count").innerText = `Total ${menuConut}`;
     };
 
     const addMenuName = () => {
         if(document.querySelector("#espresso-menu-name").value ==="") {
-            alert("메뉴를 입력해주세요;");
+            alert("Please enter the menu;");
             return;
         }
             const espressoMenuName = document.querySelector("#espresso-menu-name").value;
@@ -19,13 +19,13 @@ function App() {
                     type="button"
                     class="bg-gray-50 text-gray-500 text-sm mr-1 menu-edit-button"
                 >
-                    수정
+                    modify
                 </button>
                 <button
                     type="button"
                     class="bg-gray-50 text-gray-500 text-sm menu-remove-button"
                 >
-                    삭제
+                    delete
                 </button>
                 </li>`;
         };
@@ -38,12 +38,12 @@ function App() {
 
     const updateMenuName = (e) => {
         const $menuName = e.target.closest("li").querySelector(".menu-name")
-        const updatedMenuName = prompt("메뉴명을 수정하세요", $menuName.innerText);
+        const updatedMenuName = prompt("Please modify the menu name", $menuName.innerText);
         $menuName.innerText = updatedMenuName;
     };
 
     const removeMenuName = (e) => {
-        if(confirm("삭제하겠습니까 ?")) {
+        if(confirm("Are you sure ?")) {
             e.target.closest("li").remove();
             updateMenuCount();
         }
